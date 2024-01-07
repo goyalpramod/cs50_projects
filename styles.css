@@ -1,0 +1,25 @@
+form{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#advanced_search,
+#image_search {
+  position: fixed;
+  text-decoration: none;
+  color: #333; /* Adjust the color as needed */
+}
+
+#advanced_search {
+  top: 10px;
+  right: 120px; /* Adjust the right position as needed */
+}
+
+#image_search {
+  top: 10px;
+  right: 10px;
+}
