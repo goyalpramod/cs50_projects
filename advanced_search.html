@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a id="google_search" href="http://127.0.0.1:5500/index.html">Google search</a>
+    <form action="https://www.google.com/advanced_search" method="GET" id="advanced_search_form">
+        <div id="advanced_search_container">
+            <p>Find pages with </p>
+            <label for="all-words">“all these words:”</label>
+            <input type="text" id="all-words" name="as_q">
+            
+            <label for="exact-phrase">“this exact word or phrase:”</label>
+            <input type="text" id="exact-phrase" name="as_epq">
+
+            <label for="any-words">“any of these words:”</label>
+            <input type="text" id="any-words" name="as_oq">
+
+            <label for="none-words">“none of these words:”</label>
+            <input type="text" id="none-words" name="as_eq">
+
+            <input type="submit" value="Advanced Search" style="color: blue;">
+        </div>
+    </form>
+    <a id="simple_search" href="http://127.0.0.1:5500/index.html">Simple Google Search</a>
 </body>
 </html>
