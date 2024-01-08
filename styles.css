@@ -40,12 +40,35 @@ form{
     outline: none;
 }
 
-#submit{
-    
-}
-
 #search_container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Overall form styling */
+#advanced_search_container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  justify-content: left;
+  align-items: left;
+}
+
+/* Style for each label-input pair for vertical stacking */
+#advanced_search_container > label {
+  margin-top: 10px; /* Adjust as needed */
+}
+
+/* Input field styles for consistent width and margin */
+#advanced_search_container > input[type="text"] {
+  margin-top: 2px; /* Small space between label and field */
+  margin-bottom: 10px; /* Space before the next label */
+  width: 300px; /* Or you can use a percentage */
+}
+
+/* Making the button look nice when the mouse hovers over it */
+input[type="submit"]:hover {
+  opacity: 0.9; /* Slightly transparent on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
 }
