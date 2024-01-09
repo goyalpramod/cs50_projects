@@ -46,6 +46,14 @@ form{
     align-items: center;
 }
 
+#submit_container{
+    display: flex;
+    flex-direction: row; /* Change this to row for horizontal layout */
+    justify-content: center; /* Centers the buttons horizontally */
+    align-items: center;
+    gap: 10px; /* You can adjust this value for the desired space between buttons */
+}
+
 /* Overall form styling */
 #advanced_search_container {
   display: flex;
