@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+import random
 
 from . import util
 
@@ -27,3 +28,8 @@ def search(request):
                'search_results': search_results,
                'query': query
            })
+       
+def random_page(request):
+    all_entries = util.list_entries()
+    random_entry = random.choice(all_entries)
+    return redirect('entry', title=random_entry)
