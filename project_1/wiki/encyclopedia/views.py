@@ -32,3 +32,17 @@ def random_page(request):
     all_entries = util.list_entries()
     random_entry = random.choice(all_entries)
     return redirect('entry', title=random_entry)
+
+def new_page(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        if title in util.list_entries():
+            return render(request, 'encyclopedia/new_page.html', {
+                'error': 'This entry already exists.'
+            })
+        else:
+            util.save_entry(title, content)
+            return redirect('entry', title=title)
+    else:
+        return render(request, 'encyclopedia/new_page.html')
