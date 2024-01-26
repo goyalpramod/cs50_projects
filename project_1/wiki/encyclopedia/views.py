@@ -46,3 +46,15 @@ def new_page(request):
             return redirect('entry', title=title)
     else:
         return render(request, 'encyclopedia/new_page.html')
+    
+def edit_page(request, title):
+    if request.method == "POST":
+        content = request.POST["content"]
+        util.save_entry(title, content)
+        return redirect("entry", title=title)  # Assuming you have a view function named 'entry' to display the saved Markdown page
+    else:
+        content = util.get_entry(title)
+        if content is None:
+            return render(request, "encyclopedia/error.html", {"message": "Page not found."})
+        else:
+            return render(request, "encyclopedia/edit_page.html", {"title": title, "content": content})
